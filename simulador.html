@@ -3,45 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>Simulador de Crédito | Sonicse Enterprise</title>
     <link rel="stylesheet" href="simulador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
  
-    <div class="container">
-        <h1>Simulador de Crédito</h1>
+    <div class="page-wrapper">
  
-        <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#C9A84C" stroke-width="2" fill="none"/>
+                        <polygon points="20,8 32,15 32,25 20,32 8,25 8,15" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.5"/>
+                        <circle cx="20" cy="20" r="4" fill="#C9A84C"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">SONICSE</span>
+                    <span class="logo-sub">ENTERPRISE</span>
+                </div>
+            </div>
+            <div class="header-tagline">Soluciones Financieras de Élite</div>
+        </header>
  
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <!-- CARD PRINCIPAL -->
+        <main class="card">
  
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+            <div class="card-title-area">
+                <div class="title-line"></div>
+                <h1>Simulador de Crédito</h1>
+                <div class="title-line"></div>
+            </div>
  
-        <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+            <!-- SECCIÓN 1: DATOS FINANCIEROS -->
+            <section class="section">
+                <h2>
+                    <span class="section-number">01</span>
+                    Datos Financieros
+                </h2>
  
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+                <div class="field-group">
+                    <div class="field">
+                        <label for="txtIngresos">Ingresos Mensuales</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="text" id="txtIngresos" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="txtEgresos">Egresos Mensuales</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="text" id="txtEgresos" placeholder="0.00">
+                        </div>
+                    </div>
+                </div>
  
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+                <div class="results-row">
+                    <div class="result-item">
+                        <span class="result-label">Disponible</span>
+                        <span class="result-value" id="spnDisponible">—</span>
+                    </div>
+                    <div class="result-divider"></div>
+                    <div class="result-item">
+                        <span class="result-label">Capacidad de Pago Mensual</span>
+                        <span class="result-value" id="spnCapacidadPago">—</span>
+                    </div>
+                </div>
+            </section>
  
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+            <div class="section-separator"></div>
  
-        <div class="buttons">
-            <button onclick="calcular()">Calcular Crédito</button>
-            <button onclick="reiniciar()">Reiniciar</button>
-        </div>
+            <!-- SECCIÓN 2: SOLICITUD DE CRÉDITO -->
+            <section class="section">
+                <h2>
+                    <span class="section-number">02</span>
+                    Solicitud de Crédito
+                </h2>
+ 
+                <div class="field-group three-col">
+                    <div class="field">
+                        <label for="txtMonto">Monto Solicitado</label>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">$</span>
+                            <input type="text" id="txtMonto" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="txtPlazo">Plazo (años)</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="txtPlazo" placeholder="0" style="padding-left: 16px;">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="txtTasaInteres">Tasa de Interés</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="txtTasaInteres" placeholder="0" style="padding-left: 16px;">
+                            <span class="input-suffix">%</span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="results-grid">
+                    <div class="result-card">
+                        <span class="result-card-label">Interés a Pagar</span>
+                        <span class="result-card-value" id="spnInteresPagar">—</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-card-label">Total del Préstamo</span>
+                        <span class="result-card-value" id="spnTotalPrestamo">—</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-card-label">Cuota Mensual</span>
+                        <span class="result-card-value" id="spnCuotaMensual">—</span>
+                    </div>
+                </div>
+            </section>
+ 
+            <!-- ESTADO DEL CRÉDITO -->
+            <div class="estado-wrapper">
+                <span class="estado-label">Estado del Crédito</span>
+                <span class="estado-value" id="spnEstadoCredito">ANALIZANDO...</span>
+            </div>
+ 
+            <!-- BOTONES -->
+            <div class="buttons">
+                <button class="btn-primary" onclick="calcular()">Calcular Crédito</button>
+                <button class="btn-secondary" onclick="reiniciar()">Reiniciar</button>
+            </div>
+ 
+        </main>
+ 
+        <footer class="footer">
+            © 2025 Sonicse Enterprise · Todos los derechos reservados
+        </footer>
+ 
     </div>
-    
+ 
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
  
