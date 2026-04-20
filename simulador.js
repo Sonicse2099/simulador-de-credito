@@ -1,9 +1,8 @@
-//AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
-
+// AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
 function calcular() {
     let ingresos = parseFloat(document.getElementById("txtIngresos").value);
     let egresos  = parseFloat(document.getElementById("txtEgresos").value);
- 
+
     let disponible = calcularDisponible(ingresos, egresos);
     document.getElementById("spnDisponible").textContent = "USD " + disponible;
 
@@ -34,4 +33,22 @@ function calcular() {
         spnEstado.textContent = "CREDITO RECHAZADO";
         spnEstado.style.color = "red";
     }
+}
+
+function reiniciar() {
+    document.getElementById("txtIngresos").value    = "";
+    document.getElementById("txtEgresos").value     = "";
+    document.getElementById("txtMonto").value       = "";
+    document.getElementById("txtPlazo").value       = "";
+    document.getElementById("txtTasaInteres").value = "";
+ 
+    document.getElementById("spnDisponible").textContent    = "";
+    document.getElementById("spnCapacidadPago").textContent = "";
+    document.getElementById("spnInteresPagar").textContent  = "";
+    document.getElementById("spnTotalPrestamo").textContent = "";
+    document.getElementById("spnCuotaMensual").textContent  = "";
+ 
+    let spnEstado = document.getElementById("spnEstadoCredito");
+    spnEstado.textContent = "ANALIZANDO...";
+    spnEstado.style.color = "#2c3e50";
 }
