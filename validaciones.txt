@@ -1,0 +1,7 @@
+- Tengo un simulador de credito con los campos: Ingresos, Egresos, Monto, Plazo en anos
+y Tasa de interes. Necesito que me ayudes a definir las reglas de validacion apropiadas
+para cada campo considerando que es un formulario financiero empresarial e incluye
+validaciones de campo obligatorio, tipo de dato, valores minimos y máximos
+
+Agrega estilos CSS para que cuando un campo tenga error, el borde del input se ponga
+de color rojo y aparezca el mensaje de error debajo en texto pequeño de color rojo el diseño general del formulario usa fondo navy oscuro con acentos dorados

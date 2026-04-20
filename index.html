@@ -48,17 +48,19 @@
                 <div class="field-group">
                     <div class="field">
                         <label for="txtIngresos">Ingresos Mensuales</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="wrap-ingresos">
                             <span class="input-prefix">$</span>
                             <input type="text" id="txtIngresos" placeholder="0.00">
                         </div>
+                        <span class="error-msg" id="err-ingresos"></span>
                     </div>
                     <div class="field">
                         <label for="txtEgresos">Egresos Mensuales</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="wrap-egresos">
                             <span class="input-prefix">$</span>
                             <input type="text" id="txtEgresos" placeholder="0.00">
                         </div>
+                        <span class="error-msg" id="err-egresos"></span>
                     </div>
                 </div>
  
@@ -87,23 +89,26 @@
                 <div class="field-group three-col">
                     <div class="field">
                         <label for="txtMonto">Monto Solicitado</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="wrap-monto">
                             <span class="input-prefix">$</span>
                             <input type="text" id="txtMonto" placeholder="0">
                         </div>
+                        <span class="error-msg" id="err-monto"></span>
                     </div>
                     <div class="field">
                         <label for="txtPlazo">Plazo (años)</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="wrap-plazo">
                             <input type="text" id="txtPlazo" placeholder="0" style="padding-left: 16px;">
                         </div>
+                        <span class="error-msg" id="err-plazo"></span>
                     </div>
                     <div class="field">
                         <label for="txtTasaInteres">Tasa de Interés</label>
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="wrap-tasa">
                             <input type="text" id="txtTasaInteres" placeholder="0" style="padding-left: 16px;">
                             <span class="input-suffix">%</span>
                         </div>
+                        <span class="error-msg" id="err-tasa"></span>
                     </div>
                 </div>
  

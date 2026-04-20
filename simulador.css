@@ -1,4 +1,4 @@
- :root {
+:root {
     --navy-dark:    #080F1E;
     --navy-mid:     #0D1B35;
     --navy-light:   #142444;
@@ -9,6 +9,8 @@
     --white-dim:    #A8A89E;
     --border:       rgba(201, 168, 76, 0.25);
     --shadow:       0 24px 64px rgba(0, 0, 0, 0.5);
+    --error-color:  #e74c3c;
+    --error-border: rgba(231, 76, 60, 0.6);
 }
  
 * {
@@ -95,8 +97,7 @@ body {
     position: relative;
     overflow: hidden;
 }
- 
-/* Detalle decorativo esquina */
+
 .card::before {
     content: '';
     position: absolute;
@@ -208,6 +209,26 @@ label {
     background: rgba(201, 168, 76, 0.05);
 }
  
+/* Estado de error en el input wrapper */
+.input-wrapper.input-error {
+    border-color: var(--error-border);
+    background: rgba(231, 76, 60, 0.05);
+}
+ 
+.input-wrapper.input-error:focus-within {
+    border-color: var(--error-color);
+}
+ 
+/* Mensaje de error debajo del campo */
+.error-msg {
+    display: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--error-color);
+    margin-top: -2px;
+}
+ 
 .input-prefix,
 .input-suffix {
     font-size: 13px;
@@ -234,7 +255,7 @@ input::placeholder {
     font-weight: 300;
 }
  
-/* ---- RESULTADOS FILA (disponible / capacidad) ---- */
+/* ---- RESULTADOS FILA ---- */
 .results-row {
     display: flex;
     align-items: center;
@@ -272,7 +293,7 @@ input::placeholder {
     background: var(--border);
 }
  
-/* ---- RESULTADOS GRID (interés / total / cuota) ---- */
+/* ---- RESULTADOS GRID ---- */
 .results-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
