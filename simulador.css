@@ -29,21 +29,19 @@ body {
     color: var(--white);
 }
  
-/* ---- PAGE WRAPPER ---- */
 .page-wrapper {
     max-width: 680px;
     margin: 0 auto;
     padding: 40px 20px 60px;
 }
  
-/* ---- HEADER ---- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 28px;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 36px;
+    margin-bottom: 0;
 }
  
 .logo-area {
@@ -87,7 +85,38 @@ body {
     text-align: right;
 }
  
-/* ---- CARD ---- */
+.nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+}
+ 
+.nav-link {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white-dim);
+    padding: 14px 20px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+    bottom: -1px;
+}
+ 
+.nav-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--gold-dim);
+}
+ 
+.nav-link-active {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
+}
+ 
 .card {
     background: linear-gradient(145deg, var(--navy-mid), var(--navy-light));
     border: 1px solid var(--border);
@@ -97,7 +126,7 @@ body {
     position: relative;
     overflow: hidden;
 }
-
+ 
 .card::before {
     content: '';
     position: absolute;
@@ -109,7 +138,6 @@ body {
     pointer-events: none;
 }
  
-/* ---- TÍTULO ---- */
 .card-title-area {
     display: flex;
     align-items: center;
@@ -137,7 +165,6 @@ h1 {
     text-align: center;
 }
  
-/* ---- SECCIONES ---- */
 .section {
     margin-bottom: 0;
 }
@@ -169,7 +196,6 @@ h2 {
     margin: 32px 0;
 }
  
-/* ---- CAMPOS ---- */
 .field-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -179,6 +205,10 @@ h2 {
  
 .field-group.three-col {
     grid-template-columns: 1fr 1fr 1fr;
+}
+ 
+.field-group.single-col {
+    grid-template-columns: 1fr 1fr;
 }
  
 .field {
@@ -195,6 +225,17 @@ label {
     color: var(--white-dim);
 }
  
+.gastos-titulo {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-bottom: 14px;
+    border-left: 2px solid var(--gold-dim);
+    padding-left: 10px;
+}
+ 
 .input-wrapper {
     display: flex;
     align-items: center;
@@ -209,7 +250,6 @@ label {
     background: rgba(201, 168, 76, 0.05);
 }
  
-/* Estado de error en el input wrapper */
 .input-wrapper.input-error {
     border-color: var(--error-border);
     background: rgba(231, 76, 60, 0.05);
@@ -219,7 +259,6 @@ label {
     border-color: var(--error-color);
 }
  
-/* Mensaje de error debajo del campo */
 .error-msg {
     display: none;
     font-size: 10px;
@@ -255,7 +294,6 @@ input::placeholder {
     font-weight: 300;
 }
  
-/* ---- RESULTADOS FILA ---- */
 .results-row {
     display: flex;
     align-items: center;
@@ -293,7 +331,6 @@ input::placeholder {
     background: var(--border);
 }
  
-/* ---- RESULTADOS GRID ---- */
 .results-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -325,7 +362,6 @@ input::placeholder {
     color: var(--gold-light);
 }
  
-/* ---- ESTADO ---- */
 .estado-wrapper {
     display: flex;
     justify-content: space-between;
@@ -353,7 +389,6 @@ input::placeholder {
     font-weight: 600;
 }
  
-/* ---- BOTONES ---- */
 .buttons {
     display: flex;
     gap: 16px;
@@ -406,7 +441,6 @@ input::placeholder {
     color: var(--white);
 }
  
-/* ---- FOOTER ---- */
 .footer {
     text-align: center;
     margin-top: 28px;
@@ -416,7 +450,6 @@ input::placeholder {
     font-weight: 300;
 }
  
-/* ---- RESPONSIVE ---- */
 @media (max-width: 600px) {
  
     .card {
@@ -433,11 +466,24 @@ input::placeholder {
         text-align: left;
     }
  
+    .nav {
+        overflow-x: auto;
+    }
+ 
+    .nav-link {
+        padding: 12px 14px;
+        white-space: nowrap;
+    }
+ 
     .field-group {
         grid-template-columns: 1fr;
     }
  
     .field-group.three-col {
+        grid-template-columns: 1fr;
+    }
+ 
+    .field-group.single-col {
         grid-template-columns: 1fr;
     }
  
